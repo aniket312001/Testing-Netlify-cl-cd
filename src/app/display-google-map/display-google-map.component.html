@@ -1,0 +1,24 @@
+
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"   >
+
+  <agm-marker *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable">
+
+    <agm-info-window>
+      <strong>Label: {{m.label}}</strong><br/>
+      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="">
+      <strong>Latitude: {{m.lat}}</strong><br/>
+      <strong>Longitude: {{m.lng}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+
+</agm-map>

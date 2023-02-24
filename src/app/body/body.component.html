@@ -1,0 +1,11 @@
+<!-- <p>body works!</p>
+{{myname}}
+
+
+<app-con (frdName)="onDisplay($event)" ></app-con> -->
+<stripe-card #stripeCard
+  [(token)]     = "token"
+  (tokenChange) = "$event"
+></stripe-card>
+<button type="button" (click)="stripeCard.createToken()">createToken</button>
+gag
